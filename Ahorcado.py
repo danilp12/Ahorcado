@@ -73,8 +73,12 @@ while run:
             puntaje = str((1000-float(tiempofin))*intentos)
             puntaje = puntaje[0:4]
             print(f"Su puntaje es de: {puntaje}")
-            score = [nombre,intentos,float(tiempofin),Palabra,int(puntaje)]
-            ScoreBoard.append(score)
+            try:
+                score = [nombre,intentos,float(tiempofin),Palabra,int(puntaje)]
+                ScoreBoard.append(score)
+            except:
+                score = [nombre,intentos,float(tiempofin),Palabra,int(puntaje[0:3])]
+                ScoreBoard.append(score)
             run = False
             guardar(ScoreBoard)
             break
@@ -94,3 +98,5 @@ while run:
 input("Proceso Finalizado - Presione una tecla")
 
 #Comentario test.
+
+
