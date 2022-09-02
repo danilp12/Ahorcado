@@ -60,4 +60,13 @@ def tiempo(a):
     t = str(time.time() - a)
     t = t[0:4]
     return t
+def iniciarotrapartida():
+    otro = input("Iniciamos otra partida? - S/N")
+    if otro.upper() == "S":
+        return True
+    elif otro.upper() == "N":
+        return False
+    else: 
+        print("Opcion no valida, intentar nuevamente")
+        iniciarotrapartida()
 
