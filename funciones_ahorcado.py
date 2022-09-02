@@ -1,4 +1,4 @@
-import json, random
+import json, random, time
 from re import T
 from prettytable import PrettyTable
 
@@ -46,7 +46,18 @@ def ListarScore():
         
         print(tabla)
 def PalabraRandom():
-    listado = ["pelota","paleta","pileta","ventana","palindromo"]
-    pistas =["Objeto que rebota","Se usa para jugar con una pelota","Lugar para refrescarse","Abertura de una vivienda","Palabra que se lee de derecho y reves"]
+    listado = ["pelota","paleta","pileta","ventana","palindromo","celular","algoritmo","Auriculares"]
+    pistas =["Objeto que rebota","Se usa para jugar con una pelota","Lugar para refrescarse","Abertura de una vivienda","Palabra que se lee de derecho y reves","Dispositivo Movil","Conjunto de instrucciones de programacion","Accesorio para escuchar musica"]
     num = random.randint(0,len(listado)-1)
     return listado[num].upper(), pistas[num]
+def iniciar():
+    con = 3
+    while con != 0:
+        print(f"Iniciando en {con}")
+        time.sleep(1)
+        con -=1
+def tiempo(a):
+    t = str(time.time() - a)
+    t = t[0:4]
+    return t
+
